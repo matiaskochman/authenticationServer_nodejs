@@ -1,4 +1,4 @@
-const Authentication = require('./controller/authenticationController')
+const AuthenticationController = require('./controller/authenticationController')
 const PassportService = require('./services/PassportService');
 const passport = require('passport');
 
@@ -11,6 +11,6 @@ module.exports = function(app){
     res.send({hi: 'there'});
   });
 
-  app.post('/signin', requireSignIn, Authentication.signin);
-  app.post('/signup', Authentication.signup);
+  app.post('/signin', requireSignIn, AuthenticationController.signin);
+  app.post('/signup', AuthenticationController.signup);
 }
